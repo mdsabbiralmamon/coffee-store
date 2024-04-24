@@ -1,13 +1,24 @@
 const SignUp = () => {
+
+    const handleSignUp = e => {
+        e.preventDefault();
+        const formData = e.target;
+        const email = formData.email.value;
+        const password = formData.password.value;
+
+        const user = {email, password};
+        console.log(user);
+    }
   return (
     <div>
-      <form className="card-body">
+      <form className="card-body" onSubmit={handleSignUp}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
           <input
             type="email"
+            name="email"
             placeholder="email"
             className="input input-bordered"
             required
@@ -19,6 +30,7 @@ const SignUp = () => {
           </label>
           <input
             type="password"
+            name="password"
             placeholder="password"
             className="input input-bordered"
             required
