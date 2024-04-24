@@ -8,6 +8,7 @@ import {
 import './index.css'
 import AddCoffee from './components/AddCoffee.jsx';
 import UpdateCoffee from './components/UpdateCoffee.jsx';
+import SignUp from './components/SignUp.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     path: "/updateCoffee/:id",
     element: <UpdateCoffee />,
     loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
+  },
+  {
+    path: "/signup",
+    element: <SignUp />
   }
 ]);
 
